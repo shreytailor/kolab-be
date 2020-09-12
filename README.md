@@ -1,2 +1,8 @@
-# kolab-be
-A Node.js backend for Kolab. 📊
+<div align="center">
+    <img alt="kolab-logo" src="./resources/logo.png" width="100px" />
+    <br/>
+    <b>Kolab Backend Documentation</b>
+    <br/>
+    <img alt="build:passing" src="https://img.shields.io/badge/Build-Passing-brightgreen">
+    <img alt="licence:mit" src="https://img.shields.io/badge/Licence-MIT-9cf">
+</div>
