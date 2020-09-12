@@ -11,9 +11,11 @@ kolab.use(bodyparser.json());
 kolab.use(bodyparser.raw());
 
 // Importing all the required endpoints.
+const welcome = require('./api/welcome');
 const validateAccessToken = require('./api/tokenId/validate');
 
 // Using all the API endpoints.
+kolab.use("/api/", welcome);
 kolab.use("/api/tokenId/validate", validateAccessToken);
 
 // Starting up the server.
