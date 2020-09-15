@@ -1,8 +1,8 @@
 require('dotenv').config();
-const connection = require('./../../db/dbConnect');
 const express = require('express');
 const router = express.Router();
 const date = require('date-and-time');
+const connection = require('./../../db/dbConnect');
 
 router.post("/", function (request, response, next) {
     // Extracting all the information about the question.
@@ -13,7 +13,6 @@ router.post("/", function (request, response, next) {
     // Using the information, make an SQL query to the server.
     connection.query(`insert into Questions (question, time_created, is_answered) values ("${question}", "${time_created}", 0)`, function (error, results, fields) {
         if (error) throw error;
-        console.log(results);
     })
 
     response.status(200).send();
