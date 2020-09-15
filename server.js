@@ -19,6 +19,7 @@ const addQuestion = require('./api/question/add');
 const deleteQuestion = require('./api/question/delete');
 const getAllQuestions = require('./api/question/getAll');
 const addAnswer = require('./api/answer/add');
+const getAnswer = require('./api/answer/get');
 
 // Using all the API endpoints.
 kolab.use("/api/", welcome);
@@ -27,6 +28,7 @@ kolab.use("/api/question/add", addQuestion);
 kolab.use("/api/question/delete", deleteQuestion);
 kolab.use("/api/question/getAll", getAllQuestions);
 kolab.use("/api/answer/add", addAnswer);
+kolab.use("/api/answer/get", getAnswer);
 
 // Starting up the server.
 const server = kolab.listen(port);

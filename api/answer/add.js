@@ -13,6 +13,11 @@ router.post("/", function (request, response, next) {
         if (error) throw error;
     })
 
+    // Setting the question as answered.
+    connection.query(`update Questions set is_answered=1 where questionId=${questionId}`, function (error, results, fields) {
+        if (error) throw error;
+    })
+
     response.status(200).send();
 })
 
