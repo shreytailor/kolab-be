@@ -3,7 +3,6 @@ const cors = require('cors');
 const express = require('express');
 const bodyparser = require('body-parser');
 const port = process.env.PORT || 3001;
-const socket = require('socket.io');
 
 // Setting up our application.
 const kolab = express();
