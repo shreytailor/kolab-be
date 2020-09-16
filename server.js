@@ -46,7 +46,7 @@ io.on("connection", function (socket) {
 
     // Whenever there are any updates to the questions, we emit an event to all clients.
     socket.on("update", function () {
-        socket.emit("update");
+        socket.broadcast.emit("update");
         console.log("An update is available.");
     })
 
