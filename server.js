@@ -40,16 +40,18 @@ const server = kolab.listen(port);
 SETTING UP SOCKET.IO FOR THE FRONT-END
 -------------------------------------- */ 
 const io = require('socket.io')(server);
-let counter = 0;
 
 io.on("connection", function (socket) {
+    console.log("new conection.");
+
     // Whenever there are any updates to the questions, we emit an event to all clients.
     socket.on("update", function () {
-    socket.broadcast.emit("update");
+        socket.emit("update");
         console.log("An update is available.");
     })
 
     socket.on("disconnect", function () {
+        console.log("minus connectiono");
         socket.disconnect();
     })
 })
