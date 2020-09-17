@@ -34,21 +34,3 @@ kolab.use("/api/answer/get", getAnswer);
 
 // Starting up the server.
 const server = kolab.listen(port);
-
-
-/*
-------------------------------------------------------
-                SETTINGS FOR SOCKET.IO
-------------------------------------------------------
-*/
-
-const io = require('socket.io')(server);
-io.on("connection", function(socket) {
-    console.log("join: " + Object.keys(io.sockets.sockets).length);
-    socket.broadcast.emit("join", Object.keys(io.sockets.sockets).length);
-
-    socket.on("disconnect", function() {
-        console.log("leave: " + Object.keys(io.sockets.sockets).length);
-        socket.broadcast.emit("leave", Object.keys(io.sockets.sockets).length);
-    })
-})
