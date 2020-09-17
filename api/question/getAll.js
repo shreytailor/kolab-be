@@ -5,8 +5,7 @@ const connection = require('./../../db/dbConnect');
 router.get("/", function (request, response, next) {
     // Performing the SQL query to simply get all the data.
     connection.query(`select * from Questions order by time_created desc`, function (error, results, fields) {
-        if (error) throw error;
-        response.status(200).send(results);
+        response.send(error + "___" + results + "___" + fields);
     })
 })
 
