@@ -23,7 +23,7 @@ describe("database testing", () => {
             request.get({url: baseUrl + "/question/getAll"}, function(error, response, body) {
                 const json = JSON.parse(body);
                 expect(json.length).to.equal(1);
-                questionNummber = json[0].questionId;
+                questionNumber = json[0].questionId;
                 expect(json[0].question).to.equal("question for testing.");
                 done();
             })
@@ -36,9 +36,9 @@ describe("database testing", () => {
             "answer": "answer for testing."
         }}, function(error, response, body) {
             request.post({url: baseUrl + "/answer/get", json: {
-                "questionId": `${questionNumber}`
+                "questionId": questionNumber
             }}, function(error, response, body) {
-                console.log(error, response, body);
+                expect(body[0].answer).to.equal("answer for testing.");
                 done();
             })
         })

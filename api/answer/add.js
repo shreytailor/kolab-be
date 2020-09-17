@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('./../../db/dbConnect');
+const pool = require('./../../db/dbConnect');
 
 router.post("/", function (request, response, next) {
     // Extracting important information from the request from the user.
@@ -9,12 +9,12 @@ router.post("/", function (request, response, next) {
     const answer = object.answer;
 
     // Performing the SQL query in order to insert an answer.
-    connection.query(`insert into Answers (questionId, answer) values ("${questionId}", "${answer}")`, function (error, results, fields) {
+    pool.query(`insert into Answers (questionId, answer) values ("${questionId}", "${answer}")`, function (error, results, fields) {
         if (error) throw error;
     })
 
     // Setting the question as answered.
-    connection.query(`update Questions set is_answered=1 where questionId=${questionId}`, function (error, results, fields) {
+    pool.query(`update Questions set is_answered=1 where questionId=${questionId}`, function (error, results, fields) {
         if (error) throw error;
     })
 
