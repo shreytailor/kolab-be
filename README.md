@@ -27,14 +27,18 @@ The main repository of the Kolab project can be found [here](https://github.com/
 ## Endpoints
 ### Question
 This endpoint is used for adding new questions.
+
 ```
 ***** POST: /api/question/add *****
 {
     "question": <your_question_string>
 }
 ```
+
 <br>
+
 This endpoint is used for deleting a particular question. Note that this deletes the associated answer as well (if there exists one).
+
 ```
 ***** POST: /api/question/delete *****
 {
@@ -42,13 +46,17 @@ This endpoint is used for deleting a particular question. Note that this deletes
 }
 ```
 <br>
+
 This endpoint is used for getting all the questions from the database, when displaying the Dashboard to the user.
+
 ```
 ***** GET: /api/question/getAll *****
 ```
 
+
 ### Answer
 This endpoint is used to add answer to an existing question.
+
 ```
 ***** POST: /api/answer/add *****
 {
@@ -56,8 +64,11 @@ This endpoint is used to add answer to an existing question.
     "answer": "<your_answer_string>
 }
 ```
+
 <br>
+
 This endpoint is used to get an answer to a particular question.
+
 ```
 ***** POST: /api/answer/get *****
 {
@@ -65,14 +76,18 @@ This endpoint is used to get an answer to a particular question.
 }
 ```
 
+
 ### Access Token
+
 This endpoint is used to confirm against Google's servers whether the access token provided by the user is a valid one or not.
+
 ```
 ***** POST: /api/accessId/validate *****
 {
     "tokenId": <your_token_id>
 }
 ```
+
 
 ## Testing
 With regards to the API and the communication with the MySQL database, there was two types of testing performed.
