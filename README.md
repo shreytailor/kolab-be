@@ -7,8 +7,6 @@
     <img alt="licence:mit" src="https://img.shields.io/badge/Licence-MIT-9cf">
 </div>
 
-The origin for all the endpoints for this API is `https://kolab-be.azurewebsites.net/api/`.
-
 #### Table of Contents
 1. [Project Brief](#project-brief)
 2. [Endpoints](#endpoints)
